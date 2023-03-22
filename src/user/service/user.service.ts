@@ -4,6 +4,7 @@ import { from, Observable } from 'rxjs';
 import { Repository } from 'typeorm';
 import { UserEntity } from '../models/user.entity';
 import { UserI } from '../models/user.interface';
+import { CreateUserDto } from "../models/dto/CreateUser.dto";
 
 @Injectable()
 export class UserService {
@@ -13,7 +14,7 @@ export class UserService {
         private userRepository: Repository<UserEntity>
     ) {}
 
-    add(user: UserI): Observable<UserI> {
+    add(user: CreateUserDto): Observable<UserI> {
         return from(this.userRepository.save(user));
     }
 
