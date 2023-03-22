@@ -72,7 +72,7 @@ export class UserService {
                   // return this.findOne(user.id).pipe(
                   //   switchMap((user: UserI) => this.authService.generateJwt(user))
                   // );
-                  return of('Login was Successfull')
+                  return this.authService.generateJwt(user)
                 } else {
                   throw new HttpException("Login was not Successfull", HttpStatus.UNAUTHORIZED);
                   //throw new UnauthorizedException("Login was not Successfull");
