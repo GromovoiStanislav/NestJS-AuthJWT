@@ -69,6 +69,7 @@ export class UserService {
             return this.validatePassword(loginUserDto.password, user.password).pipe(
               switchMap((passwordsMatches: boolean) => {
                 if (passwordsMatches) {
+                  //// without password!!!
                   // return this.findOne(user.id).pipe(
                   //   switchMap((user: UserI) => this.authService.generateJwt(user))
                   // );
